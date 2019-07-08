@@ -8,7 +8,7 @@ def todo_list():
     c.execute("SELECT id, task FROM todo WHERE status LIKE '1'")
     result = c.fetchall()
     c.close()
-    output = template('make_table', rows=result)
+    output = template('make_table.tpl', rows=result)
     return output
 
 @route('/new', method='GET')
@@ -23,7 +23,7 @@ def new_item():
         c.close()
         return '<p>The new task was inserted into the database, the ID is %s</p>' % new_id
     else:
-        return template('new_task')
+        return template('new_task.tpl')
 
 @route('/edit/<no:int>', method='GET')
 def edit_item(no):
