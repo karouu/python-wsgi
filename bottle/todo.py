@@ -23,7 +23,7 @@ def new_item():
         c.close()
         return '<p>The new task was inserted into the database, the ID is %s</p>' % new_id
     else:
-        return template('new_task.tpl')
+        return template('new_task')
 
 @route('/edit/<no:int>', method='GET')
 def edit_item(no):
