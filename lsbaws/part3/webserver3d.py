@@ -45,6 +45,7 @@ def serve_forever():
         # on the next loop run
         clients.append(client_connection)
         pid = os.fork()
+
         if pid == 0:  # child
             listen_socket.close()  # close child copy
             handle_request(client_connection)

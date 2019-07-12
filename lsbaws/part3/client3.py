@@ -27,6 +27,7 @@ def main(max_clients, max_conns):
                 sock.connect(SERVER_ADDRESS)
                 sock.sendall(REQUEST)
                 socks.append(sock)
+                print("pid=",os.getpid())
                 print(connection_num)
                 os._exit(0)
 

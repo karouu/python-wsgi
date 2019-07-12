@@ -38,6 +38,7 @@ def serve_forever():
     listen_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     listen_socket.bind(SERVER_ADDRESS)
     listen_socket.listen(REQUEST_QUEUE_SIZE)
+    
     print('Serving HTTP on port {port} ...'.format(port=PORT))
     print('Parent PID (PPID): {pid}\n'.format(pid=os.getpid()))
 
