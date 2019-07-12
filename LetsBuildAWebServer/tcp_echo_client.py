@@ -1,4 +1,5 @@
 # tcp_echo_client.py
+# pip install pysocks
 import sys,socket,socks
 
 host = sys.argv[1]
