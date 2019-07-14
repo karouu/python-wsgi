@@ -47,6 +47,7 @@ def serve_forever():
             client_connection, client_address = listen_socket.accept()
         except IOError as e:
             code, msg = e.args
+            # (4, 'Interrupted system call')
             # restart 'accept' if it was interrupted
             if code == errno.EINTR:
                 continue
