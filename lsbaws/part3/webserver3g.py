@@ -30,7 +30,11 @@ def grim_reaper(signum, frame):
 
         if pid == 0:  # no more zombies
             return
-
+'''waitpid() return:
+on  success,  returns the process ID of the child whose state has changed;
+if WNOHANG was specified and one or more child(ren) specified by pid exist,
+but have not yet changed state, then 0 is returned.  On error, -1 is returned.
+'''
 
 def handle_request(client_connection):
     request = client_connection.recv(1024)
