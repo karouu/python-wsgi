@@ -105,4 +105,4 @@ app = SessionMiddleware(app, session_opts)
 
 if __name__ == '__main__':
     bottle.debug(True)
-    bottle.run(app=app, server='gevent')
+    bottle.run(host='0.0.0.0',port='8080',app=app, server='gevent')
