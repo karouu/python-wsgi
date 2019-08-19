@@ -1,6 +1,7 @@
 # tcp_echo_client.py
 # pip install pysocks
-import sys,socket,socks
+
+import sys, socket, socks
 
 host = sys.argv[1]
 port = int(sys.argv[2])

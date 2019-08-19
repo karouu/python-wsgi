@@ -21,6 +21,6 @@ def register():
     server = smtplib.SMTP("smtp.gmail.com",587)
     server.starttls()
     server.login("jharvard@cs50.net",os.getenv("PASSWARD"))
-    server.sendmail("jharvard@cs50.net",email,message)
+    server.sendmail("jharvard@cs50.net", email, message)
 
     return redirect("/success.html")
