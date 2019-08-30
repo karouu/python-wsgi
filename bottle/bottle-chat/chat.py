@@ -38,7 +38,7 @@ class BeakerPlugin(object):
         return wrapper
 
 
-@route("/",template='index')
+@route("/", template='index')
 def main(session):
     global cache
     if cache:
