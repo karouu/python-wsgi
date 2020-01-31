@@ -16,8 +16,8 @@ sock.connect((host,port))
 
 try:
 	# Send data
-	message = 'This is the message. It will be repeated.'
-	print >>sys.stderr, 'sending "%s"' % message
+	message = 'This is the message. It will be repeated'
+	print >>sys.stdout, 'sending "%s"' % message
 	sock.sendall( message )
 
 	# look for the response
