@@ -1,16 +1,20 @@
 # tcp_echo_client.py
 # pip install pysocks
 
-import sys, socket, socks
+import sys, socket
 
 host = sys.argv[1]
 port = int(sys.argv[2])
 
-sock = socks.socksocket( socket.AF_INET, socket.SOCK_STREAM )
-sock.set_proxy( socks.SOCKS5, "127.0.0.1", 1080)
+# import socks
+# sock = socks.socksocket( socket.AF_INET, socket.SOCK_STREAM )
+# sock.set_proxy( socks.SOCKS5, "127.0.0.1", 1080)
+# sock.connect( (host,port) )
 
-sock.connect( (host,port) )
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#sock.bind(host, port)
 
+sock.connect(host,port)
 try:
 	# Send data
 	message = 'This is the message. It will be repeated.'
