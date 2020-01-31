@@ -14,7 +14,7 @@ port = int(sys.argv[2])
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 #sock.bind(host, port)
 
-sock.connect(host,port)
+sock.connect((host,port))
 try:
 	# Send data
 	message = 'This is the message. It will be repeated.'
