@@ -12,9 +12,8 @@ port = int(sys.argv[2])
 # sock.connect( (host,port) )
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-#sock.bind(host, port)
-
 sock.connect((host,port))
+
 try:
 	# Send data
 	message = 'This is the message. It will be repeated.'
@@ -30,5 +29,5 @@ try:
 		amount_received += len(data)
 		print >>sys.stderr, 'received "%s"' % data
 finally:
-	print >>sys.stderr, 'closing socket'
+	#print >>sys.stderr, 'closing socket'
 	sock.close()
