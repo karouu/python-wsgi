@@ -1,11 +1,12 @@
 # tcp_echo_client.py
-# pip install pysocks
 
 import sys, socket
 
 host = sys.argv[1]
 port = int(sys.argv[2])
 
+
+# pip install pysocks
 # import socks
 # sock = socks.socksocket( socket.AF_INET, socket.SOCK_STREAM )
 # sock.set_proxy( socks.SOCKS5, "127.0.0.1", 1080)
@@ -23,7 +24,6 @@ try:
 	# look for the response
 	amount_received = 0
 	amount_expected = len(message)
-
 	while amount_received < amount_expected:
 		data = sock.recv(20)
 		amount_received += len(data)

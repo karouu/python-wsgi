@@ -2,8 +2,10 @@
 import http.server
 import socketserver
 
-PORT = 8080
-Handler = http.server.SimpleHTTPRequestHandler # handle with index.html
+HOST = localhost
+PORT = 8083
+Handler = http.server.SimpleHTTPRequestHandler  #handle with index.html
+
 
 '''
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
@@ -11,6 +13,6 @@ with socketserver.TCPServer(("", PORT), Handler) as httpd:
     httpd.serve_forever()
 '''
 
-httpd = socketserver.TCPServer(("",PORT), Handler)
-print("servig at port", PORT)
+httpd = socketserver.TCPServer((HOST, PORT), Handler)
+print("servig at ip:port ", HOST, PORT)
 httpd.serve_forever()
