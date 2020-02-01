@@ -2,7 +2,7 @@
 import http.server
 import socketserver
 
-HOST = localhost
+HOST = '0.0.0.0'
 PORT = 8083
 Handler = http.server.SimpleHTTPRequestHandler  #handle with index.html
 
