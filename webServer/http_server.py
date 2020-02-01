@@ -6,7 +6,6 @@ HOST = '0.0.0.0'
 PORT = 8083
 Handler = http.server.SimpleHTTPRequestHandler  #handle with index.html
 
-
 '''
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
     print("serving at port", PORT)
