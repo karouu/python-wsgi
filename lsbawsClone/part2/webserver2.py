@@ -2,6 +2,7 @@
 import socket
 import StringIO
 import sys
+SERVER_ADDRESS = (HOST, PORT) = '', 8887
 
 class WSGIServer(object):
 
@@ -39,7 +40,6 @@ class WSGIServer(object):
             # Handle one request and close the client connection. Then
             # loop over to wait for another client connection
             self.handle_one_request()
-
 
     def handle_one_request(self):
         self.request_data = request_data = self.client_connection.recv(1024)
@@ -95,7 +95,7 @@ class WSGIServer(object):
         # Add necessary server headers
         server_headers = [
             ('Date', 'Tue, 31 Mar 2015 12:54:48 GMT'),
-            ('Server', 'WSGIServer 0.2'),
+            ('Server', 'WSGIServer2020 0.2'),
         ]
         self.headers_set = [status, response_headers + server_headers]
         # To adhere to WSGI specification the start_response must return
@@ -120,8 +120,6 @@ class WSGIServer(object):
             self.client_connection.sendall(response)
         finally:
             self.client_connection.close()
-
-SERVER_ADDRESS = (HOST, PORT) = '', 8887
 
 def make_server(server_address, application):
     server = WSGIServer(server_address)
