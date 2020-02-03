@@ -16,7 +16,6 @@ Host: localhost:8888
 
 """
 
-
 def main(max_clients, max_conns):
     socks = []
     for client_num in range(max_clients):
@@ -28,7 +27,7 @@ def main(max_clients, max_conns):
                 sock.sendall(REQUEST)
                 socks.append(sock)
                 print("pid={}".format(os.getpid()))
-                #print(connection_num)
+                print(connection_num)
                 os._exit(0)
 
 
